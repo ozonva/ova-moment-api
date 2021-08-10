@@ -4,6 +4,8 @@ import (
 	"github.com/ozonva/ova-moment-api/internal/utils"
 )
 
+// ChunksInt Splits the slice of ints into chunks
+//
 func ChunksInt(slice []int, chunkSize int) [][]int {
 	if chunkSize <= 0 {
 		panic("Chunk size must be a positive integer")
@@ -17,6 +19,8 @@ func ChunksInt(slice []int, chunkSize int) [][]int {
 	return chunks
 }
 
+// ChunksStr Splits the slice of strings into chunks
+//
 func ChunksStr(slice []string, chunkSize int) [][]string {
 	if chunkSize <= 0 {
 		panic("Chunk size must be a positive integer")
@@ -30,6 +34,8 @@ func ChunksStr(slice []string, chunkSize int) [][]string {
 	return chunks
 }
 
+// DiffInt Computes the difference of slice of ints and elements.
+//
 func DiffInt(minuend []int, subtrahend ...int) []int {
 	var stub struct{}
 	subtrahendMap := make(map[int]struct{}, len(subtrahend))
@@ -47,6 +53,8 @@ func DiffInt(minuend []int, subtrahend ...int) []int {
 	return difference
 }
 
+// DiffStr Computes the difference of slice of strings and elements.
+//
 func DiffStr(minuend []string, subtrahend ...string) []string {
 	var stub struct{}
 	subtrahendMap := make(map[string]struct{}, len(subtrahend))
