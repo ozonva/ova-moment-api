@@ -6,3 +6,9 @@ run:
 	    make build; \
 	fi
 	./bin/main
+
+test:
+	if ! [ -f ./bin/main ]; then \
+		make build; \
+	fi
+	go test -v ./...
