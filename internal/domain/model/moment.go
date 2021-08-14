@@ -16,6 +16,8 @@ func NewMomentID(rawID string) *MomentID {
 type MomentRepository interface {
 	NextID() *MomentID
 	save(m *Moment)
+	ofID(ID MomentID) *Moment
+	ofUserID(userID UserID) *MomentCollection
 }
 
 type Moment struct {
