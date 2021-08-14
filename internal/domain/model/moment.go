@@ -29,8 +29,15 @@ type Moment struct {
 	tags        []string
 }
 
-func NewMoment(momentID MomentID, userID UserID, name string, description string) *Moment {
-	return &Moment{momentID: momentID, userID: userID, occurredAt: time.Now(), name: name, description: description}
+func NewMoment(momentID MomentID, userID UserID, name string, description string, tags []string) *Moment {
+	return &Moment{
+		momentID:    momentID,
+		userID:      userID,
+		occurredAt:  time.Now(),
+		name:        name,
+		description: description,
+		tags:        tags,
+	}
 }
 
 func (m Moment) ID() MomentID {
