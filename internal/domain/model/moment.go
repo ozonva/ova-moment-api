@@ -14,9 +14,9 @@ func NewMomentID(rawID string) *MomentID {
 }
 
 type MomentRepository interface {
-	NextID() *MomentID
-	save(m *Moment)
-	ofID(ID MomentID) *Moment
+	NextMomentID() *MomentID
+	save(moment *Moment)
+	ofMomentID(momentID MomentID) *Moment
 	ofUserID(userID UserID) MomentCollection
 }
 
