@@ -42,7 +42,7 @@ func TestNewMoment(t *testing.T) {
 }
 
 func TestMoment_ID(t *testing.T) {
-	assert.Equal(t, momentFixture.MomentID, createMomentFromFixture().ID().Hash())
+	assert.Equal(t, momentFixture.MomentID, createMomentFromFixture().MomentID().Hash())
 }
 
 func TestMoment_UserID(t *testing.T) {

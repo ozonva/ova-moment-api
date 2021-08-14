@@ -17,7 +17,7 @@ type MomentRepository interface {
 	NextID() *MomentID
 	save(m *Moment)
 	ofID(ID MomentID) *Moment
-	ofUserID(userID UserID) *MomentCollection
+	ofUserID(userID UserID) MomentCollection
 }
 
 type Moment struct {
@@ -40,7 +40,7 @@ func NewMoment(momentID MomentID, userID UserID, name string, description string
 	}
 }
 
-func (m Moment) ID() MomentID {
+func (m Moment) MomentID() MomentID {
 	return m.momentID
 }
 
@@ -82,7 +82,7 @@ func (mc MomentCollection) Chunks(chunkSize int) [][]Moment {
 func (mc MomentCollection) ToMap() map[MomentID]Moment {
 	m := make(map[MomentID]Moment)
 	for _, v := range mc {
-		m[v.ID()] = v
+		m[v.MomentID()] = v
 	}
 
 	return m

@@ -10,10 +10,10 @@ func newDomainObjectID(rawID string) domainObjectID {
 	return domainObjectID(rawID)
 }
 
-func (doID domainObjectID) Hash() string {
-	return string(doID)
+func (ID domainObjectID) Hash() string {
+	return string(ID)
 }
 
-func (doID domainObjectID) Equals(_doID hasher) bool {
-	return doID.Hash() == _doID.Hash()
+func (ID domainObjectID) Equals(_ID hasher) bool {
+	return ID.Hash() == _ID.Hash()
 }
